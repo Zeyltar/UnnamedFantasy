@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class CharacterContoller : MonoBehaviour
 {
@@ -11,16 +12,16 @@ public class CharacterContoller : MonoBehaviour
     protected Animator animator;
     protected Rigidbody2D rb;
 
-    private int colliderCount;
-    private bool jumped;
-    private bool isJumping;
+    private int _colliderCount;
+    private bool _jump;
+    private bool _stopJump;
 
-    [SerializeField]
-    protected float MoveSpeed;
-    [SerializeField]
-    protected float JumpForce;
-
-
+    [SerializeField] protected float MoveSpeed;
+    [SerializeField] float GravityModifier;
+    [SerializeField] float JumpModifier = 1.5f;
+    [SerializeField] float JumpDeceleration = 0.5f;
+    [SerializeField] float TakeOffForce;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,35 +29,42 @@ public class CharacterContoller : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        colliderCount = 0;
-        jumped = false;
-        isJumping = false;
+        _colliderCount = 0;
+        _jump = false;
+        _stopJump = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * MoveSpeed * Time.deltaTime);
+        transform.Translate(direction * (MoveSpeed * Time.deltaTime));
         animator.SetInteger("MoveX", (int)direction.x);
 
-        if (direction.x < 0 )
-            spriteRenderer.flipX = true;
-        else if (direction.x > 0)
-            spriteRenderer.flipX = false;
-         
-       
-
+        spriteRenderer.flipX = direction.x switch
+        {
+            < 0 => true,
+            > 0 => false,
+            _ => spriteRenderer.flipX
+        };
     }
 
     private void FixedUpdate()
     {
-        if (jumped)
+        if (_jump)
         {
-            rb.velocity = Vector2.up * JumpForce;
+            if (_colliderCount > 0)
+                rb.velocity = Vector2.up * (TakeOffForce * JumpModifier);
         }
-        else if (isJumping && colliderCount <= 0)
+        else if (_stopJump)
         {
-            rb.velocity = Vector2.down * JumpForce * 1.15f;
+            _stopJump = false;
+            if (rb.velocity.y > 0)
+                rb.velocity *= JumpDeceleration;
+        }
+        
+        if (!(_colliderCount > 0) && rb.velocity.y < 0)
+        {
+            rb.velocity += Vector2.down * (Physics2D.gravity.magnitude * (GravityModifier * Time.deltaTime));
         }
     }
 
@@ -70,16 +78,16 @@ public class CharacterContoller : MonoBehaviour
 
         if (context.started)
         {
-            if (colliderCount > 0)
-            {
-                jumped = true;
+            if (_colliderCount > 0)
+            {   
+                _jump = true;
             }
         }
-        if (context.duration > InputSystem.settings.defaultHoldTime || context.canceled)
+        
+        if (context.duration > InputSystem.settings.defaultHoldTime || context.canceled || context.performed)
         {
-            jumped = false;
-            isJumping = true;
-
+            _jump = false;
+            _stopJump = true;
         }
 
     }
@@ -94,12 +102,11 @@ public class CharacterContoller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        colliderCount++;
-        isJumping = false;
+        _colliderCount++;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        colliderCount--;
+        _colliderCount--;
     }
 }
