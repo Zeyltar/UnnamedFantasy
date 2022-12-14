@@ -15,14 +15,20 @@ public class CharacterContoller : MonoBehaviour
     private int _colliderCount;
     private bool _jump;
     private bool _stopJump;
+    private bool _isInSuperMove;
+    private Vector2 _looking;
 
     [SerializeField] float MoveSpeed;
     [SerializeField] float GravityModifier;
     [SerializeField] float JumpModifier = 1.5f;
     [SerializeField] float JumpDeceleration = 0.5f;
     [SerializeField] float TakeOffForce;
+    
+    public Vector2 Looking { get => _looking;}
 
-    public Vector2 Direction { get => direction;}
+    public delegate void SuperMoveDelegate(bool value);
+
+    public SuperMoveDelegate SuperMove;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +40,15 @@ public class CharacterContoller : MonoBehaviour
         _colliderCount = 0;
         _jump = false;
         _stopJump = false;
+        _isInSuperMove = false;
+        SuperMove = UpdateSuperMove;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * (MoveSpeed * Time.deltaTime));
+        if (!_isInSuperMove)
+            transform.Translate(direction * (MoveSpeed * Time.deltaTime));
         animator.SetInteger("MoveX", (int)direction.x);
 
         spriteRenderer.flipX = direction.x switch
@@ -66,13 +75,16 @@ public class CharacterContoller : MonoBehaviour
         
         if (!(_colliderCount > 0) && rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.down * (Physics2D.gravity.magnitude * (GravityModifier * Time.deltaTime));
+            rb.velocity += Physics2D.gravity * (GravityModifier * Time.deltaTime);
         }
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        direction = context.ReadValue<Vector2>() * Vector2.right;
+            direction = context.ReadValue<Vector2>() * Vector2.right;
+            
+            if (direction != Vector2.zero && !_isInSuperMove)
+                _looking = direction;
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -98,8 +110,13 @@ public class CharacterContoller : MonoBehaviour
     {
         if (context.started)
         {
-            animator.SetBool("Attack", animator.GetBool("Attack"));
+            //animator.SetBool("Attack", !animator.GetBool("Attack"));
         }
+    }
+    
+    private void UpdateSuperMove(bool value)
+    {
+        _isInSuperMove = value;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

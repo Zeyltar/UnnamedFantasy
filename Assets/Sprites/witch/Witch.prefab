@@ -185,7 +185,7 @@ MonoBehaviour:
   GravityModifier: 1.25
   JumpModifier: 1.5
   JumpDeceleration: 0.5
-  TakeOffForce: 6
+  TakeOffForce: 5
 --- !u!114 &6044238674349329531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,8 +199,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TeleportCooldown: 5
-  Speed: 5
-  TravelTime: 0.15
+  Distance: 5
+  TravelTime: 0.075
 --- !u!61 &5806597365319530836
 BoxCollider2D:
   m_ObjectHideFlags: 0

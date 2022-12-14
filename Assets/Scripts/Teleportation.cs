@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Teleportation : MonoBehaviour
 {
     [SerializeField] float TeleportCooldown;
-    [SerializeField] float Speed;
+    [FormerlySerializedAs("Speed")] [SerializeField] float Distance;
     [SerializeField] float TravelTime;
 
     private float _timer;
     private bool _teleport;
     private bool _canTeleport;
     private CharacterContoller _cc;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +35,13 @@ public class Teleportation : MonoBehaviour
             _canTeleport = false;
             if (_timer <= TravelTime)
             {
-                transform.Translate(_cc.Direction * (Speed / TravelTime) * Time.deltaTime);
+                transform.Translate(_cc.Looking * (Distance / TravelTime * Time.deltaTime));
                 _timer += Time.deltaTime;
             }
             else
             {
                 _teleport = false;
+                _cc.SuperMove(_teleport);
                 _timer = 0;
             }
         }
@@ -55,7 +59,10 @@ public class Teleportation : MonoBehaviour
 
     public void Teleport(InputAction.CallbackContext context)
     {
-        if (_canTeleport && _cc.Direction != Vector2.zero)
+        if (_canTeleport && _cc.Looking != Vector2.zero)
+        {
             _teleport = true;
+            _cc.SuperMove(_teleport); 
+        }
     }
 }
