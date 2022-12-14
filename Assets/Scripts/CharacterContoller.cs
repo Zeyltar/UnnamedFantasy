@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 public class CharacterContoller : MonoBehaviour
 {
 
-    protected Vector2 direction;
+    private Vector2 direction;
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
     protected Rigidbody2D rb;
@@ -16,12 +16,14 @@ public class CharacterContoller : MonoBehaviour
     private bool _jump;
     private bool _stopJump;
 
-    [SerializeField] protected float MoveSpeed;
+    [SerializeField] float MoveSpeed;
     [SerializeField] float GravityModifier;
     [SerializeField] float JumpModifier = 1.5f;
     [SerializeField] float JumpDeceleration = 0.5f;
     [SerializeField] float TakeOffForce;
-    
+
+    public Vector2 Direction { get => direction;}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +98,7 @@ public class CharacterContoller : MonoBehaviour
     {
         if (context.started)
         {
-            animator.SetTrigger("Attack");
+            animator.SetBool("Attack", animator.GetBool("Attack"));
         }
     }
 
