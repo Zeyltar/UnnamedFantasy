@@ -525,7 +525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_42
+      name: witch_attack_b_0
       rect:
         serializedVersion: 2
         x: 65
@@ -546,7 +546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_43
+      name: witch_attack_b_1
       rect:
         serializedVersion: 2
         x: 100
@@ -567,7 +567,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_44
+      name: witch_attack_b_2
       rect:
         serializedVersion: 2
         x: 134
@@ -588,7 +588,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_45
+      name: witch_attack_b_3
       rect:
         serializedVersion: 2
         x: 166
@@ -777,7 +777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_28
+      name: particle_0
       rect:
         serializedVersion: 2
         x: 162
@@ -785,7 +785,7 @@ TextureImporter:
         width: 3
         height: 3
       alignment: 9
-      pivot: {x: 0.6666667, y: 0.6666667}
+      pivot: {x: 0.33333334, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -798,7 +798,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_29
+      name: particle_1
       rect:
         serializedVersion: 2
         x: 169
@@ -806,7 +806,7 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 9
-      pivot: {x: 0.6, y: 0.6}
+      pivot: {x: 0.4, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -819,7 +819,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_54
+      name: particle_2
       rect:
         serializedVersion: 2
         x: 176
@@ -827,7 +827,7 @@ TextureImporter:
         width: 7
         height: 7
       alignment: 9
-      pivot: {x: 0.5714286, y: 0.5714286}
+      pivot: {x: 0.42857146, y: 0.5714286}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -840,7 +840,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_55
+      name: particle_3
       rect:
         serializedVersion: 2
         x: 186
@@ -848,7 +848,7 @@ TextureImporter:
         width: 3
         height: 3
       alignment: 9
-      pivot: {x: 0.6666667, y: 0.6666667}
+      pivot: {x: 0.33333334, y: 0.6666667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -956,16 +956,17 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       witch_4: 1589102573
-      witch_55: 1512718155
+      particle_1: -450542015
       witch_19: -1754985249
       witch_2: 694688360
       witch_24: -373059452
       witch_15: 249490444
       witch_30: 731431607
-      witch_42: -1571786786
+      particle_2: -801382861
       witch_17: 1985703611
       witch_walk_2: -1897915698
       witch_0: -855843433
+      witch_attack_b_0: -1571786786
       witch_walk_0: -684650094
       witch_fall_2: 1952690557
       witch_18: -1477787976
@@ -973,10 +974,8 @@ TextureImporter:
       witch_fall_1: -1125715778
       witch_20: -2135200733
       witch_attack_0: 1610313640
-      witch_45: -710827617
       witch_attack_6: 2057965399
       witch_attack_3: -1426022295
-      witch_29: -450542015
       witch_53: -1304269432
       witch_walk_3: -2058282562
       witch_fall_3: -14982032
@@ -985,22 +984,25 @@ TextureImporter:
       witch_23: -1993480245
       witch_11: 695613596
       witch_12: 1667771047
+      particle_3: 1512718155
       witch_32: -1859838015
       witch_16: 1585732183
-      witch_attack_1: -1798563584
       witch_walk_5: -532127081
+      witch_attack_1: -1798563584
       witch_52: 242779129
       witch_22: -885110469
       witch_26: 1117713501
       witch_walk_4: 1070198578
       witch_fall_4: -1063224236
+      witch_attack_b_1: -1771362478
+      witch_attack_b_2: -1188458437
       witch_25: 1702119101
       witch_13: 312756821
       witch_3: 140155746
-      witch_43: -1771362478
+      witch_attack_b_3: -710827617
+      particle_0: -634282860
       witch_attack_7: -282230934
       witch_21: 1849364917
-      witch_28: -634282860
       witch_attack_4: -346158969
       witch_walk_1: 1127268547
       witch_fall_0: -896867135
@@ -1008,9 +1010,7 @@ TextureImporter:
       witch_attack_2: -1153677653
       witch_27: 1730152663
       witch_1: 61491559
-      witch_44: -1188458437
       witch_hurt_0: 722319860
-      witch_54: -801382861
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

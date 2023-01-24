@@ -106,14 +106,6 @@ public class CharacterContoller : MonoBehaviour
 
     }
 
-    public void Fire(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            //animator.SetBool("Attack", !animator.GetBool("Attack"));
-        }
-    }
-    
     private void UpdateSuperMove(bool value)
     {
         _isInSuperMove = value;
