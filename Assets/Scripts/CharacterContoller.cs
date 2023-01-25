@@ -18,11 +18,11 @@ public class CharacterContoller : MonoBehaviour
     private bool _isInSuperMove;
     private Vector2 _looking;
 
-    [SerializeField] float MoveSpeed;
-    [SerializeField] float GravityModifier;
-    [SerializeField] float JumpModifier = 1.5f;
-    [SerializeField] float JumpDeceleration = 0.5f;
-    [SerializeField] float TakeOffForce;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float gravityModifier;
+    [SerializeField] float jumpModifier = 1.5f;
+    [SerializeField] float jumpDeceleration = 0.5f;
+    [SerializeField] float takeOffForce;
     
     public Vector2 Looking { get => _looking;}
 
@@ -49,7 +49,7 @@ public class CharacterContoller : MonoBehaviour
     void Update()
     {
         if (!_isInSuperMove)
-            transform.Translate(direction * (MoveSpeed * Time.deltaTime));
+            transform.Translate(direction * (moveSpeed * Time.deltaTime));
         animator.SetInteger("MoveX", (int)direction.x);
 
         spriteRenderer.flipX = direction.x switch
@@ -65,18 +65,18 @@ public class CharacterContoller : MonoBehaviour
         if (_jump)
         {
             if (_colliderCount > 0)
-                rb.velocity = Vector2.up * (TakeOffForce * JumpModifier);
+                rb.velocity = Vector2.up * (takeOffForce * jumpModifier);
         }
         else if (_stopJump)
         {
             _stopJump = false;
             if (rb.velocity.y > 0)
-                rb.velocity *= JumpDeceleration;
+                rb.velocity *= jumpDeceleration;
         }
         
         if (!(_colliderCount > 0) && rb.velocity.y < 0)
         {
-            rb.velocity += Physics2D.gravity * (GravityModifier * Time.deltaTime);
+            rb.velocity += Physics2D.gravity * (gravityModifier * Time.deltaTime);
         }
     }
 

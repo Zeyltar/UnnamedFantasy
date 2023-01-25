@@ -7,16 +7,14 @@ using UnityEngine.Serialization;
 
 public class Teleportation : MonoBehaviour
 {
-    [SerializeField] float TeleportCooldown;
-    [FormerlySerializedAs("Speed")] [SerializeField] float Distance;
-    [SerializeField] float TravelTime;
+    [SerializeField] float teleportCooldown = 5;
+    [SerializeField] float distance = 3;
+    [SerializeField] float travelTime = 0.1f;
 
     private float _timer;
     private bool _teleport;
     private bool _canTeleport;
     private CharacterContoller _cc;
-
-   
 
     // Start is called before the first frame update
     void Start()
@@ -33,9 +31,9 @@ public class Teleportation : MonoBehaviour
         if (_teleport)
         {
             _canTeleport = false;
-            if (_timer <= TravelTime)
+            if (_timer <= travelTime)
             {
-                transform.Translate(_cc.Looking * (Distance / TravelTime * Time.deltaTime));
+                transform.Translate(_cc.Looking * (distance / travelTime * Time.deltaTime));
                 _timer += Time.deltaTime;
             }
             else
@@ -47,7 +45,7 @@ public class Teleportation : MonoBehaviour
         }
         else
         {
-            if (!_canTeleport && _timer <= TeleportCooldown)
+            if (!_canTeleport && _timer <= teleportCooldown)
                 _timer += Time.deltaTime;
             else
             {

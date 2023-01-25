@@ -4,16 +4,17 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
 
 public class AttackController : MonoBehaviour
 {
-    [SerializeField] protected Attack SimpleAttack;
+    [SerializeField] protected Attack simpleAttackPrefab;
     private Animator _animator;
     private CharacterContoller _cc;
     
     protected bool CanSimpleAttack;
-    [SerializeField] protected float SimpleAttackTimer;
+    [SerializeField] protected float simpleAttackTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +38,10 @@ public class AttackController : MonoBehaviour
                 return;
             
             CanSimpleAttack = false;
-            StartCoroutine(ResetSimpleAttack(SimpleAttackTimer));
+            StartCoroutine(ResetSimpleAttack(simpleAttackTimer));
             _animator.SetTrigger("Attack");
 
-            var attack = SimpleAttack;
+            var attack = simpleAttackPrefab;
             Instantiate(attack, transform.position, Quaternion.Euler(0,0, _cc.Looking.x > 0 ? 0 : 180));
             attack.Use();
         }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour
 {
+    
+    [SerializeField] protected int damage;
     // Start is called before the first frame update
     protected virtual void Start()
     {

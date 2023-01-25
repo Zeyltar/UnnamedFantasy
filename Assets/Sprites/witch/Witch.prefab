@@ -229,11 +229,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7673d9043aa138d4da7572e36ebf04ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 5
-  GravityModifier: 1.25
-  JumpModifier: 1.5
-  JumpDeceleration: 0.5
-  TakeOffForce: 5
+  moveSpeed: 5
+  gravityModifier: 1.25
+  jumpModifier: 1.5
+  jumpDeceleration: 0.5
+  takeOffForce: 3
 --- !u!114 &6044238674349329531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,9 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1957e08153f707c4ca91b0bf21642672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeleportCooldown: 5
-  Distance: 3
-  TravelTime: 0.075
+  teleportCooldown: 5
+  distance: 3
+  travelTime: 0.1
 --- !u!114 &9172975608300053294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,8 +261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3de1c7a86169184db13cd2c7698516f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SimpleAttack: {fileID: 8491779909033421707, guid: 9a41f5d5af8dc114c833ee18c86b5ed2, type: 3}
-  SimpleAttackTimer: 0.4
+  simpleAttackPrefab: {fileID: 8491779909033421707, guid: 9a41f5d5af8dc114c833ee18c86b5ed2, type: 3}
+  simpleAttackTimer: 0.4
 --- !u!114 &365370797187088804
 MonoBehaviour:
   m_ObjectHideFlags: 0

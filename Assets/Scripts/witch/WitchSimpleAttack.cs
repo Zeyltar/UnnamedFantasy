@@ -32,7 +32,7 @@ public class WitchSimpleAttack : Attack
         var health = other.GetComponent<Health>();
         if (health != null)
         {
-            health.TakeDamage(1);
+            health.TakeDamage(damage);
         }
 
     }
