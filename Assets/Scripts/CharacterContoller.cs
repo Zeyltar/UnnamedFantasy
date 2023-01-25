@@ -41,6 +41,7 @@ public class CharacterContoller : MonoBehaviour
         _jump = false;
         _stopJump = false;
         _isInSuperMove = false;
+        _looking = Vector2.right;
         SuperMove = UpdateSuperMove;
     }
 
@@ -120,4 +121,5 @@ public class CharacterContoller : MonoBehaviour
     {
         _colliderCount--;
     }
+    
 }
