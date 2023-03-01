@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8491779909033421707}
   - component: {fileID: 7101449690509557119}
   - component: {fileID: 7101449690509557116}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: PS_SimpleAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24688abdc246b0448a9a4f7b48c388f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 6
+  Direction: {x: 0, y: 0}
+  damage: 1
 --- !u!199 &7101449690509557119
 ParticleSystemRenderer:
   serializedVersion: 6
