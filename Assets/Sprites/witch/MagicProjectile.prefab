@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711a476097a2f824584c89211ae71bfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Direction: {x: 1, y: -0}
-  damage: 4
+  Direction: {x: 1, y: 0}
+  damage: 12
   speed: 10
 --- !u!95 &6003002883792990026
 Animator:

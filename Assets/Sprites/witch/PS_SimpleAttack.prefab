@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0}
-  damage: 1
+  damage: 6
 --- !u!199 &7101449690509557119
 ParticleSystemRenderer:
   serializedVersion: 6
