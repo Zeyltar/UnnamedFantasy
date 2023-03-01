@@ -46,8 +46,8 @@ public class AttackController : MonoBehaviour
             _animator.SetTrigger("Attack2");
 
             var spell = spellPrefab;
-            Instantiate(spell, transform.position, Quaternion.Euler(0,0, _cc.Looking.x > 0 ? 0 : 180));
-            spell.Direction = _cc.Looking*-1;
+            Instantiate(spell, transform.position, Quaternion.identity);
+            spell.Direction = _cc.Looking;
             spell.Use();
         }
     }
