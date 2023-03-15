@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Map1UnnamedFantasie.tmx",
+    "activeFile": "MapLevel2.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -23,19 +23,27 @@
             "scaleInDock": 1
         },
         "Map1UnnamedFantasie.tmx": {
-            "scale": 0.25,
+            "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 2514,
-                "y": -336
+                "x": 1573.3333333333333,
+                "y": -1280.6666666666665
             }
         },
         "MapBoss.tmx": {
             "scale": 1.9103906249999998,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 320.0916043021306,
-                "y": 191.5838547417495
+                "x": 319.82987772461456,
+                "y": 191.84558131926553
+            }
+        },
+        "MapLevel2.tmx": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 3740.5,
+                "y": 2248
             }
         },
         "MapReciveTP.tmx": {
@@ -74,7 +82,7 @@
             "scaleInEditor": 1
         }
     },
-    "map.fixedSize": true,
+    "map.fixedSize": false,
     "map.height": 12,
     "map.lastUsedFormat": "tmx",
     "map.width": 20,
@@ -85,16 +93,18 @@
         "Map1UnnamedFantasie.tmx",
         "MapTp.tmx",
         "MapReciveTP.tmx",
-        "MapBoss.tmx"
+        "MapBoss.tmx",
+        "MapLevel2.tmx"
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
         "MapTutorialUnnamedFantasie.tmx",
         "inca_back2.tsx",
-        "MapBoss.tmx",
-        "MapReciveTP.tmx",
-        "MapTp.tmx",
         "Map1UnnamedFantasie.tmx",
+        "MapTp.tmx",
+        "MapReciveTP.tmx",
+        "MapBoss.tmx",
+        "MapLevel2.tmx",
         "C:/Users/edwin/Desktop/Map1UnnamedFantasy.tmx",
         "inca_front.tsx"
     ]
