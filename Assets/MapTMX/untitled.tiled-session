@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "MapLevel2.tmx",
+    "activeFile": "MapMarioType.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -24,42 +24,50 @@
         },
         "Map1UnnamedFantasie.tmx": {
             "scale": 0.75,
-            "selectedLayer": 1,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 1573.3333333333333,
-                "y": -1280.6666666666665
+                "x": 1067.3333333333333,
+                "y": -1281.3333333333333
             }
         },
         "MapBoss.tmx": {
             "scale": 1.9103906249999998,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 319.82987772461456,
-                "y": 191.84558131926553
+                "x": 320.0916043021306,
+                "y": 192.1073078967816
             }
         },
         "MapLevel2.tmx": {
-            "scale": 1,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 3740.5,
-                "y": 2248
+                "x": 3904.6666666666665,
+                "y": 2490.6666666666665
+            }
+        },
+        "MapMarioType.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 3571.5,
+                "y": 211
             }
         },
         "MapReciveTP.tmx": {
             "scale": 5.319999999999999,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 79.8872180451128,
-                "y": 79.98120300751881
+                "x": 79.98120300751881,
+                "y": 80.07518796992481
             }
         },
         "MapTp.tmx": {
             "scale": 5.319999999999999,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 79.8872180451128,
-                "y": 79.98120300751881
+                "x": 79.98120300751881,
+                "y": 80.07518796992481
             }
         },
         "MapTutorialUnnamedFantasie.tmx": {
@@ -94,7 +102,8 @@
         "MapTp.tmx",
         "MapReciveTP.tmx",
         "MapBoss.tmx",
-        "MapLevel2.tmx"
+        "MapLevel2.tmx",
+        "MapMarioType.tmx"
     ],
     "project": "untitled.tiled-project",
     "recentFiles": [
@@ -105,6 +114,7 @@
         "MapReciveTP.tmx",
         "MapBoss.tmx",
         "MapLevel2.tmx",
+        "MapMarioType.tmx",
         "C:/Users/edwin/Desktop/Map1UnnamedFantasy.tmx",
         "inca_front.tsx"
     ]
