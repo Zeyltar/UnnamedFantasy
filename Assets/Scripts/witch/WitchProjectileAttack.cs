@@ -7,10 +7,7 @@ using UnityEngine.UI;
 
 public class WitchProjectileAttack : Attack
 {
-    
-
-    [SerializeField] protected float speed;
-    
+    [SerializeField] protected GameObject explosionPrefab;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -21,8 +18,6 @@ public class WitchProjectileAttack : Attack
     protected override void Update()
     {
         base.Update();
-        
-        transform.Translate(Direction * (speed * Time.deltaTime));
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -37,10 +32,17 @@ public class WitchProjectileAttack : Attack
                     health.TakeDamage(damage);
                 }
             }
+            
             //TODO Particles explosions
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         
         
+    }
+    
+    public override void Use()
+    {
+        base.Use();
     }
 }

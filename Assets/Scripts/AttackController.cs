@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
 
 public class AttackController : MonoBehaviour
 {
@@ -45,10 +46,9 @@ public class AttackController : MonoBehaviour
             StartCoroutine(ResetCastTime(spellCastTimer));
             _animator.SetTrigger("Attack2");
 
-            var spell = spellPrefab;
-            Instantiate(spell, transform.position, Quaternion.identity);
+            
+            Attack spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
             spell.Direction = _cc.Looking;
-            spell.Use();
         }
     }
     
@@ -69,9 +69,11 @@ public class AttackController : MonoBehaviour
             StartCoroutine(ResetSimpleAttack(simpleAttackTimer));
             _animator.SetTrigger("Attack");
 
-            var attack = simpleAttackPrefab;
-            Instantiate(attack, transform.position, Quaternion.Euler(0,0, _cc.Looking.x > 0 ? 0 : 180));
-            attack.Use();
+            Attack attack = Instantiate(simpleAttackPrefab, transform.position, Quaternion.identity) ;
+            attack.Direction = _cc.Looking;
+            if (_cc.Velocity != Vector2.zero)
+                attack.speed = _cc.Speed;
+            
         }
             
     }
