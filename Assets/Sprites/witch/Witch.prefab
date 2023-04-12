@@ -40,7 +40,7 @@ BoxCollider2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548024396098557813}
   m_Enabled: 1
-  m_Density: 1
+  m_Density: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7673d9043aa138d4da7572e36ebf04ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  speed: 0
   gravityModifier: 1.25
   jumpModifier: 1.5
   jumpDeceleration: 0.5
@@ -263,6 +263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleAttackPrefab: {fileID: 8491779909033421707, guid: 9a41f5d5af8dc114c833ee18c86b5ed2, type: 3}
   simpleAttackTimer: 0.4
+  spellPrefab: {fileID: 5806971000503848747, guid: 29f761bc07d229141b0cf7739f25a48d, type: 3}
+  spellCastTimer: 4
 --- !u!114 &365370797187088804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +398,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d7e76b7b-2ab9-45a7-8f7c-27d738a1d48d
     m_ActionName: Player/SuperMovement[/Keyboard/leftShift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9172975608300053294}
+        m_TargetAssemblyTypeName: AttackController, Assembly-CSharp
+        m_MethodName: CastSpell
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e3bbb407-0190-4ec7-b6f9-6039dbe6190c
+    m_ActionName: Player/Fire2[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
