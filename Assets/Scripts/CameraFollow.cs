@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 desiredPosition = new Vector3(player.position.x + offset.x, player.position.y + offset.y, transform.position.z);
 
         // only follow player if they pass the threshold
-        float distance = Mathf.Abs(desiredPosition.x - transform.position.x);
+        float distance = Vector3.Distance(transform.position, desiredPosition);
         if (distance > threshold)
         {
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);

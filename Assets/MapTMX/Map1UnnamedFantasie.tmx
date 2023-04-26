@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="3" nextobjectid="1">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="4" nextobjectid="1">
  <tileset firstgid="1" source="inca_back2.tsx"/>
  <tileset firstgid="231" source="inca_front.tsx"/>
+ <tileset firstgid="466" source="lava_tileset.tsx"/>
  <layer id="2" name="Tile Back" width="30" height="20">
   <data encoding="csv">
    <chunk x="0" y="-48" width="16" height="16">

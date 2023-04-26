@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 
 public class Health : MonoBehaviour
 {
+    public event Action OnDamaged;
+    public event Action OnDeath;
     
     [SerializeField] protected int maxHealthPoints;
     public int MaxHealthPoints { get => maxHealthPoints;}
@@ -14,25 +16,30 @@ public class Health : MonoBehaviour
     public int HealthPoints { get => _healthPoints;}
     
     private bool _canTakeDamage;
-    private float _invulnerabilityTimer;
+    private float _invulnerabilityTimer = 0.5f;
     private bool _isDead;
     private Animator _animator;
-    
-    // Start is called before the first frame update
-    void Start()
+
+
+    private void Awake()
     {
         _healthPoints = maxHealthPoints;
         _canTakeDamage = true;
-        _invulnerabilityTimer = 0.5f;
         _isDead = false;
         _animator = GetComponent<Animator>();
+        
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
     }
 
     // Update is called once per frame
     void Update()
     {
         if (_isDead && !_animator.GetBool("Dead"))
-            Destroy(gameObject);
+            OnDeath?.Invoke();
     }
     
 
@@ -44,12 +51,15 @@ public class Health : MonoBehaviour
         _healthPoints = Mathf.Clamp(_healthPoints - damage, 0, _healthPoints);
         if (_healthPoints != 0)
         {
+            OnDamaged?.Invoke();
             if (_animator != null)
                 _animator.SetBool("Damaged", true);
             StartCoroutine(ResetInvulnerability(_invulnerabilityTimer));
         }
         else
+        {
             Die();
+        }
     }
 
     private IEnumerator ResetInvulnerability(float invulnerabilityTimer)
@@ -63,6 +73,7 @@ public class Health : MonoBehaviour
         _isDead = true;
         if (_animator != null)
             _animator.SetBool("Dead", _isDead);
+        
     }
     
     

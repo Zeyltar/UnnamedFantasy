@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8491779909033421707}
   - component: {fileID: 7101449690509557119}
   - component: {fileID: 7101449690509557116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PS_SimpleAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}

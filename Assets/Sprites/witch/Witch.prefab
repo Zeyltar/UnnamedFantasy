@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 6044238674349329531}
   - component: {fileID: 9172975608300053294}
   - component: {fileID: 365370797187088804}
+  - component: {fileID: 9186538424665902161}
   m_Layer: 6
   m_Name: Witch
   m_TagString: Player
@@ -229,11 +230,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7673d9043aa138d4da7572e36ebf04ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  gravityModifier: 1.25
+  speed: 5
+  gravityModifier: 1
   jumpModifier: 1.5
   jumpDeceleration: 0.5
-  takeOffForce: 3
+  takeOffForce: 4.5
 --- !u!114 &6044238674349329531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,3 +420,16 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &9186538424665902161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7135777073887388276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1afac1cc48ebd742b4fef4ad8aee91e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 12
