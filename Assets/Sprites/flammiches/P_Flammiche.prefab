@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealthPoints: 6
+  _healthPoints: 0
 --- !u!114 &-5422460256281816622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18344adb539148f4cb97b62f1c3f89f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusDistance: 7
+  focusDistance: 6
   focusDuration: 1.5
   onFocused:
     m_PersistentCalls:

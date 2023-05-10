@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18344adb539148f4cb97b62f1c3f89f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusDistance: 5
+  focusDistance: 4
   focusDuration: 0.9
   onFocused:
     m_PersistentCalls:
