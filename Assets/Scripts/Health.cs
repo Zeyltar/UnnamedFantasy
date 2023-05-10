@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
     
     [SerializeField] protected int maxHealthPoints;
     public int MaxHealthPoints { get => maxHealthPoints;}
-    public int _healthPoints;
+    protected int _healthPoints;
     public int HealthPoints { get => _healthPoints;}
     
     private bool _canTakeDamage;
