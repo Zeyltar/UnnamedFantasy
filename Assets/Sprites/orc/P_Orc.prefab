@@ -158,7 +158,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7325352299863598569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18344adb539148f4cb97b62f1c3f89f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  focusDistance: 4
+  focusDistance: 6
   focusDuration: 0.9
   onFocused:
     m_PersistentCalls:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1.2
   minimumDistance: 1
-  Speed: 3
+  Speed: 2
 --- !u!114 &3453834111274045982
 MonoBehaviour:
   m_ObjectHideFlags: 0
