@@ -49,9 +49,9 @@ public class Health : MonoBehaviour
         
         _canTakeDamage = false;
         _healthPoints = Mathf.Clamp(_healthPoints - damage, 0, _healthPoints);
+        OnDamaged?.Invoke();
         if (_healthPoints != 0)
         {
-            OnDamaged?.Invoke();
             if (_animator != null)
                 _animator.SetBool("Damaged", true);
             StartCoroutine(ResetInvulnerability(_invulnerabilityTimer));

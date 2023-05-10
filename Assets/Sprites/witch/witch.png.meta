@@ -735,7 +735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_52
+      name: witch_hurt_1
       rect:
         serializedVersion: 2
         x: 38
@@ -756,7 +756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: witch_53
+      name: witch_dead_0
       rect:
         serializedVersion: 2
         x: 103
@@ -966,6 +966,7 @@ TextureImporter:
       witch_17: 1985703611
       witch_walk_2: -1897915698
       witch_0: -855843433
+      witch_hurt_1: 242779129
       witch_attack_b_0: -1571786786
       witch_walk_0: -684650094
       witch_fall_2: 1952690557
@@ -976,7 +977,7 @@ TextureImporter:
       witch_attack_0: 1610313640
       witch_attack_6: 2057965399
       witch_attack_3: -1426022295
-      witch_53: -1304269432
+      witch_dead_0: -1304269432
       witch_walk_3: -2058282562
       witch_fall_3: -14982032
       witch_attack_5: 545585820
@@ -989,7 +990,6 @@ TextureImporter:
       witch_16: 1585732183
       witch_walk_5: -532127081
       witch_attack_1: -1798563584
-      witch_52: 242779129
       witch_22: -885110469
       witch_26: 1117713501
       witch_walk_4: 1070198578
