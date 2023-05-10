@@ -15,8 +15,10 @@ GameObject:
   - component: {fileID: 8583549813795697023}
   - component: {fileID: 4269099225685156697}
   - component: {fileID: -5422460256281816622}
+  - component: {fileID: 5418097041884139190}
+  - component: {fileID: 8366844590213811240}
   m_Layer: 7
-  m_Name: flammiches_0
+  m_Name: P_Flammiche
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1afac1cc48ebd742b4fef4ad8aee91e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthPoints: 12
+  maxHealthPoints: 6
 --- !u!114 &-5422460256281816622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,3 +184,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionDamage: 1
+--- !u!114 &5418097041884139190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098871675447227539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18344adb539148f4cb97b62f1c3f89f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusDistance: 7
+  focusDuration: 1.5
+  onFocused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8366844590213811240}
+        m_TargetAssemblyTypeName: FlammicheController, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLostFocus:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8366844590213811240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098871675447227539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9afcaf3b3fdce7f4cb8c473ec6742207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.6
+  AttackPrefab: {fileID: 4947259305999890115, guid: 2e6270045b9ea0a41bb926c0d8c8f85f, type: 3}

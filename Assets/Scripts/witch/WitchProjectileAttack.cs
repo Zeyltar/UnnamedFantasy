@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WitchProjectileAttack : Attack
+public class WitchProjectileAttack : WitchAttack
 {
     [SerializeField] protected GameObject explosionPrefab;
     // Start is called before the first frame update
@@ -17,7 +17,8 @@ public class WitchProjectileAttack : Attack
     // Update is called once per frame
     protected override void Update()
     {
-        base.Update();
+        transform.Translate(_direction * (Time.deltaTime * speed * speedModifier));
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)

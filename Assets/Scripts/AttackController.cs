@@ -13,11 +13,11 @@ public class AttackController : MonoBehaviour
     private Animator _animator;
     private CharacterContoller _cc;
     
-    [SerializeField] protected Attack simpleAttackPrefab;
+    [SerializeField] protected WitchAttack simpleAttackPrefab;
     protected bool CanSimpleAttack;
     [SerializeField] protected float simpleAttackTimer;
 
-    [SerializeField] protected Attack spellPrefab;
+    [SerializeField] protected WitchAttack spellPrefab;
     protected bool CanCastSpell;
     [SerializeField] protected float spellCastTimer;
     
@@ -47,7 +47,7 @@ public class AttackController : MonoBehaviour
             _animator.SetTrigger("Attack2");
 
             
-            Attack spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
+            WitchAttack spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
             spell.Direction = _cc.Looking;
         }
     }
@@ -69,7 +69,7 @@ public class AttackController : MonoBehaviour
             StartCoroutine(ResetSimpleAttack(simpleAttackTimer));
             _animator.SetTrigger("Attack");
 
-            Attack attack = Instantiate(simpleAttackPrefab, transform.position, Quaternion.identity) ;
+            WitchAttack attack = Instantiate(simpleAttackPrefab, transform.position, Quaternion.identity) ;
             attack.Direction = _cc.Looking;
             if (_cc.Velocity != Vector2.zero)
                 attack.speed = _cc.Speed;
