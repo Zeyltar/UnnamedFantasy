@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24688abdc246b0448a9a4f7b48c388f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 2
   speed: 0
   speedModifier: 0.5
-  damage: 6
 --- !u!199 &7101449690509557119
 ParticleSystemRenderer:
   serializedVersion: 6
